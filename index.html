@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+</head>
+<style>
+    body{
+        position: relative;
+        padding: 0;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eeeeee;
+    }
+    .container{
+    position: absolute;
+    border-radius: 16px;
+    padding: 32px;
+    height: 90vh;
+    width: 100%;
+    max-width: 720px;
+    box-shadow: -2px -2px 6px 2px #ffffff,
+    2px 2px 6px 2px #c4c4c4;
+    overflow-x: scroll;
+    }
+    h3{
+    font-size: 20px;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 16px;
+    }
+    .plane,.doctype{
+        margin-left: 20px;
+    }
+    h4 {   
+    font-size: 20px;
+    font-weight: 900;
+     margin-bottom: 0;
+    }
+    .text-neumorphism{
+        color: #aabbbb;
+        text-shadow: 2px 2px 2px #ffffff,
+    -1px -1px -1px #a4a4a4;
+    }
+.subplane,.subdoctype
+{
+    padding: 2px;
+}
+.subplane>input[type=radio].neumorphism{
+    border-radius: 50%;
+ 
+    align-items: center;
+    justify-content: center;
+    position: relative; 
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    background-color: #eeeeee;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .2)
+    ,-5px -5px 10px rgba(255, 255, 255, 1),
+    inset 0 0 0 rgba(0,0,0,.2),
+    inset 0 0 0 rgba(255, 255, 255, .2);
+    outline: none;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+.subplane>input[type=radio].neumorphism:checked{
+    background-color: #686de0;
+    box-shadow:0 0 0 rgba(0, 0, 0, .2)
+    ,0 0 0  rgba(255, 255, 255, 1),
+    inset 5px 5px 10px rgba(0, 0, 0, .2)
+    ,inset -5px -5px 10px rgba(255, 255, 255, .2);
+}
+.subplane>input[type=radio].neumorphism::before{
+    content: "\f111";
+    font-size: 5px;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: #eeeeee;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform:translate(-50%,-50%) ;
+}
+.subdoctype>input[type=checkbox].neumorphism-checkbox{
+    position: relative;
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+
+    background-color: #eeeeee;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .2)
+    ,-5px -5px 10px rgba(255, 255, 255, 1),
+    inset 0 0 0 rgba(0,0,0,.2),
+    inset 0 0 0 rgba(255, 255, 255, .2);
+    outline: none;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+.subdoctype>input[type=checkbox].neumorphism-checkbox:checked{
+    background-color: #686de0;
+    box-shadow:0 0 0 rgba(0, 0, 0, .2)
+    ,0 0 0  rgba(255, 255, 255, 1),
+    inset 5px 5px 10px rgba(0, 0, 0, .2)
+    ,inset -5px -5px 10px rgba(255, 255, 255, .2);
+}
+.subdoctype>input[type=checkbox].neumorphism-checkbox::before{
+    content: "\f00c";
+    font-size: 10px;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: #eeeeee;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform:translate(-50%,-50%) ;
+}
+.input{
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    padding: 16px;
+    border-radius: 16px;
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto 16px;
+    box-shadow: inset -4px -4px 10px 4px #ffffff,
+    inset 4px 4px 10px 4px #c4c4c4;
+    color: #aaaaaa;
+    font-size: 18px;
+    transition: 0.2s ease-out;
+}
+.input::placeholder{
+    color: #ccc;
+}
+.input:focus{
+    box-shadow:inset -1px -1px 3px 1px #ffffff,
+    inset 1px 1px 3px 1px #c4c4c4;
+}
+.btn{
+    color: #aabbbb;
+    cursor: pointer;
+    border: 3px solid transparent;
+    padding: 13px;
+    font-weight: 700;
+    box-shadow: -4px -4px 13px 4px #ffffff,
+    4px 4px 13px 4px #c4c4c4;
+}
+.btn:focus{
+    box-shadow: -4px -4px 8px 3px #ffffff,
+    4px 4px 8px 3px #c4c4c4 ;
+
+}
+.btn:hover{
+    box-shadow: -3px -3px 8px 3px #ffffff,
+    3px 3px 8px 3px #c4c4c4;
+}
+.btn:active{
+    color: #ff5858;
+    box-shadow: -4px -4px 13px 4px #c4c4c4,
+    4px 4px 13px 4px #dfdfdf;
+}
+.print{
+    margin-top: 10px;
+}
+.doctype{
+    overflow-x: scroll;
+}
+</style>
+<body>
+    <div class="container">
+        <h3 class="text-neumorphism">ยินดีต้อนรับสู่ระบบดาวน์โหลดเอกสาร</h3>
+        <div class="plane">
+            <h4 class="text-neumorphism">1.เลือกแบบประกัน</h4>
+            <div class="subplane">
+                <input class="neumorphism" type="radio" name="plane" id="plane" checked>
+                <label class="text-neumorphism">กรุงเทพ200</label>
+            </div>
+            <div class="subplane">
+                <input class="neumorphism" type="radio" name="plane" id="plane" checked>
+                <label class="text-neumorphism">กรุงเทพ200</label>
+            </div><div class="subplane">
+                <input class="neumorphism" type="radio" name="plane" id="plane" checked>
+                <label class="text-neumorphism">กรุงเทพ200</label>
+            </div><div class="subplane">
+                <input class="neumorphism" type="radio" name="plane" id="plane" checked>
+                <label class="text-neumorphism">กรุงเทพ200</label>
+            </div>
+            <div class="subplane">
+                <input class="neumorphism" type="radio" name="plane" id="plane">
+                <label class="text-neumorphism">กรุงเทพ200</label>
+            </div>
+            <div class="subplane">
+                <input class="neumorphism" type="radio" name="plane" id="plane">
+                <label class="text-neumorphism">กรุงเทพ200</label>
+            </div>
+        </div>
+        <div class="doctype">
+            <h4 class="text-neumorphism">2.เลือกประเภทเอกสาร</h4>
+            <div class="subdoctype">
+                <input class="neumorphism-checkbox" type="checkbox" name="doctype" id="doctype"/>
+                <label class="text-neumorphism">เอกสารใบคำขอ</label>
+            </div>
+            <div class="subdoctype">
+                <input class="neumorphism-checkbox" type="checkbox" name="doctype" id="doctype"/>
+                <label class="text-neumorphism">เอกสารใบคำขอ</label>
+            </div>
+            <div class="subdoctype">
+                <input class="neumorphism-checkbox" type="checkbox" name="doctype" id="doctype"/>
+                <label class="text-neumorphism">เอกสารใบคำขอ</label>
+            </div>
+            <div class="subdoctype">
+                <input class="neumorphism-checkbox" type="checkbox" name="doctype" id="doctype"/>
+                <label class="text-neumorphism">เอกสารใบคำขอ</label>
+            </div>
+            <div class="subdoctype">
+                <input class="neumorphism-checkbox" type="checkbox" name="doctype" id="doctype"/>
+                <label class="text-neumorphism">เอกสารใบคำขอ</label>
+            </div>
+            <div class="subdoctype">
+                <input class="neumorphism-checkbox" type="checkbox" name="doctype" id="doctype"/>
+                <label class="text-neumorphism">เอกสารใบคำขอ</label>
+            </div>
+            <div class="subdoctype">
+                <input class="neumorphism-checkbox" type="checkbox" name="doctype" id="doctype"/>
+                <label class="text-neumorphism">เอกสารใบคำขอ</label>
+            </div>
+            <div class="subdoctype">
+                <input class="neumorphism-checkbox" type="checkbox" name="doctype" id="doctype"/>
+                <label class="text-neumorphism">เอกสารใบคำขอ</label>
+            </div>
+            <div class="subdoctype">
+                <input class="neumorphism-checkbox" type="checkbox" name="doctype" id="doctype"/>
+                <label class="text-neumorphism">เอกสารใบคำขอ</label>
+            </div>
+            <div class="subdoctype">
+                <input class="neumorphism-checkbox" type="checkbox" name="doctype" id="doctype"/>
+                <label class="text-neumorphism">เอกสารใบคำขอ</label>
+            </div>
+            <div class="subdoctype">
+                <input class="neumorphism-checkbox" type="checkbox" name="doctype" id="doctype"/>
+                <label class="text-neumorphism">เอกสารใบคำขอ</label>
+            </div>
+            <div class="subdoctype">
+                <input class="neumorphism-checkbox" type="checkbox" name="doctype" id="doctype"/>
+                <label class="text-neumorphism">เอกสารใบคำขอ</label>
+            </div>
+            <div class="print">
+                <button class="input btn">พิมพ์เอกสาร</button>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
